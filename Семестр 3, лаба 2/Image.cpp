@@ -124,7 +124,7 @@ public:
 		Image temp_px(*this);
 		for (size_t i = 0; i < _l; i++) {
 			for (size_t j = 0; j < _w; j++) {
-				temp_px(i, j) = ~_px[i][j] + 1;
+				temp_px(i, j) = _px[i][j] - 2 * _px[i][j];
 			}
 		}
 		return temp_px;

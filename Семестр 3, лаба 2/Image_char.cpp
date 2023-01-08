@@ -23,7 +23,7 @@ public:
 
 	Image(size_t l, size_t w, char value) {
 		if (l <= 0 || w <= 0) throw std::logic_error("incorrect image sizes");
-		if(value < 32 || value > 127) throw std::logic_error("incorrect value");
+		//if(value < 32 || value > 127) throw std::logic_error("incorrect value");
 		_l = l;
 		_w = w;
 		_px = new char* [_l];
