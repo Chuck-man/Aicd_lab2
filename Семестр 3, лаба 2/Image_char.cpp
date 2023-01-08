@@ -156,21 +156,21 @@ public:
 	Image creating_rectangle(size_t x1, size_t y1, size_t x2, size_t y2) {
 		if (x1 < 0 || y1 < 0 || x2 < 0 || y2 < 0) throw std::logic_error("coordinates mismatch");
 		size_t i = x1, j = y1;
-		if (_px[i][j] != '.') {
+		if (_px[i][j] != ' ') {
 			while (i < x2) {
-				_px[i][j] = '.';
+				_px[i][j] = ' ';
 				++i;
 			}
 			while (j < y2) {
-				_px[i][j] = '.';
+				_px[i][j] = ' ';
 				++j;
 			}
 			while (i >= x1) {
-				_px[i][j] = '.';
+				_px[i][j] = ' ';
 				--i;
 			}
 			while (j >= y1) {
-				_px[i][j] = '.';
+				_px[i][j] = ' ';
 				--j;
 			}
 			return *this;

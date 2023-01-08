@@ -205,6 +205,7 @@ int main() {
 				}
 				}
 			}
+			break;
 		}
 		case(2):
 		{
@@ -351,6 +352,8 @@ int main() {
 					short mean0 = 0;
 					std::cout << "Enter the length and width of the Image: ";
 					std::cin >> length >> width;
+					std::cout << "Enter the value for the Image: ";
+					std::cin >> mean0;
 					Image<short> picture0(length, width, mean0);
 					int x1, y1, x2, y2;
 					std::cout << "Enter the coordinates of the upper left and lower right vertices of the rectangle: \n";
@@ -397,6 +400,7 @@ int main() {
 				}
 				}
 			}
+			break;
 		}
 		case(3):
 		{
@@ -543,6 +547,8 @@ int main() {
 					float mean0 = 0;
 					std::cout << "Enter the length and width of the Image: ";
 					std::cin >> length >> width;
+					std::cout << "Enter the value for the Image: ";
+					std::cin >> mean0;
 					Image<float> picture0(length, width, mean0);
 					int x1, y1, x2, y2;
 					std::cout << "Enter the coordinates of the upper left and lower right vertices of the rectangle: \n";
@@ -589,6 +595,7 @@ int main() {
 				}
 				}
 			}
+			break;
 		}
 		case(4):
 		{
@@ -735,6 +742,8 @@ int main() {
 					char mean0 = 0;
 					std::cout << "Enter the length and width of the Image: ";
 					std::cin >> length >> width;
+					std::cout << "Enter the value for the Image: ";
+					std::cin >> mean0;
 					Image<char> picture0(length, width, mean0);
 					int x1, y1, x2, y2;
 					std::cout << "Enter the coordinates of the upper left and lower right vertices of the rectangle: \n";
@@ -781,6 +790,7 @@ int main() {
 				}
 				}
 			}
+			break;
 		}
 		case(5):
 		{
