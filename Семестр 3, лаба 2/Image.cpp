@@ -64,6 +64,8 @@ public:
 		for (size_t i = 0; i < _l; i++) {
 			for (size_t j = 0; j < _w; j++) {
 				temp_px(i, j) = _px[i][j] + obj._px[i][j];
+				if (_px[i][j] + obj._px[i][j] > SHRT_MAX) temp_px(i, j) = SHRT_MAX;
+				if (_px[i][j] + obj._px[i][j] < SHRT_MIN) temp_px(i, j) = SHRT_MIN;
 			}
 		}
 		return temp_px;
@@ -75,6 +77,8 @@ public:
 		for (size_t i = 0; i < _l; i++) {
 			for (size_t j = 0; j < _w; j++) {
 				temp_px(i, j) = _px[i][j] * obj._px[i][j];
+				if (_px[i][j] * obj._px[i][j] > SHRT_MAX) temp_px(i, j) = SHRT_MAX;
+				if (_px[i][j] * obj._px[i][j] < SHRT_MIN) temp_px(i, j) = SHRT_MIN;
 			}
 		}
 		return temp_px;
@@ -85,6 +89,8 @@ public:
 		for (size_t i = 0; i < _l; i++) {
 			for (size_t j = 0; j < _w; j++) {
 				temp_px(i, j) = _px[i][j] + value;
+				if (_px[i][j] + value > SHRT_MAX) temp_px(i, j) = SHRT_MAX;
+				if (_px[i][j] + value < SHRT_MIN) temp_px(i, j) = SHRT_MIN;
 			}
 		}
 		return temp_px;
@@ -95,6 +101,8 @@ public:
 		for (size_t i = 0; i < obj._l; i++) {
 			for (size_t j = 0; j < obj._w; j++) {
 				temp_px(i, j) = obj._px[i][j] + value;
+				//if (_px[i][j] + value > SHRT_MAX) temp_px(i, j) = SHRT_MAX;
+				//if (_px[i][j] + value < SHRT_MIN) temp_px(i, j) = SHRT_MIN;
 			}
 		}
 		return temp_px;
@@ -105,6 +113,8 @@ public:
 		for (size_t i = 0; i < obj._l; i++) {
 			for (size_t j = 0; j < obj._w; j++) {
 				temp_px(i, j) = obj._px[i][j] * value;
+				//if (_px[i][j] * value > SHRT_MAX) temp_px(i, j) = SHRT_MAX;
+				//if (_px[i][j] * value < SHRT_MIN) temp_px(i, j) = SHRT_MIN;
 			}
 		}
 		return temp_px;
@@ -115,6 +125,8 @@ public:
 		for (size_t i = 0; i < _l; i++) {
 			for (size_t j = 0; j < _w; j++) {
 				temp_px(i, j) = _px[i][j] * value;
+				if (_px[i][j] * value > SHRT_MAX) temp_px(i, j) = SHRT_MAX;
+				if (_px[i][j] * value < SHRT_MIN) temp_px(i, j) = SHRT_MIN;
 			}
 		}
 		return temp_px;

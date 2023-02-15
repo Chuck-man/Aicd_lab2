@@ -1,6 +1,8 @@
 #include "Image.cpp"
 #include "Image_bool.cpp"
 #include "Image_char.cpp"
+#include <iostream>
+#include <limits.h>
 
 int main() {
 
@@ -210,7 +212,7 @@ int main() {
 		case(2):
 		{
 			while (!exit) {
-				short mean = 0;
+				int mean;
 				int length = 0, width = 0;
 				int sw;
 				std::cout << "\nChoose:\n1. Create the Image\n2. Operations with Images\n3. Operations with Image and value\n4. Image inversion\n5. Calculate the occupancy rate\n6. Draw rectangle\n7. Reading/writing an element\n8. Exit\n";
@@ -218,11 +220,13 @@ int main() {
 				switch (sw) {
 				case(1):
 				{
-					std::cout << "Create the Image<bool>\n\n" << "Enter the length and width of the Images: ";
+					std::cout << "Create the Image\n\n" << "Enter the length and width of the Images: ";
 					std::cin >> length;
 					std::cin >> width;
 					std::cout << "Enter the value for the Image: ";
 					std::cin >> mean;
+					if (mean > SHRT_MAX) mean = SHRT_MAX;
+					if (mean < SHRT_MIN) mean = SHRT_MIN;
 					try {
 						Image<short> picture(length, width, mean);
 						std::cout << picture << "\n\n";
@@ -235,7 +239,7 @@ int main() {
 				case(2):
 				{
 					bool exit2 = false;
-					short mean2, mean1;
+					int mean2, mean1;
 					std::cout << "Enter the length and width of the Images: ";
 					std::cin >> length >> width;
 					std::cout << "Enter the value for the first Image: ";
@@ -273,11 +277,11 @@ int main() {
 				}
 				case(3):
 				{
-					short value;
-					std::cout << "The meaning of the variable (0 or 1): ";
+					int value;
+					std::cout << "The meaning of the variable: ";
 					std::cin >> value;
 					bool exit3 = false;
-					short mean3;
+					int mean3;
 					std::cout << "Enter the length and width of the Image: ";
 					std::cin >> length >> width;
 					std::cout << "Enter the value for the Image: ";
@@ -413,10 +417,10 @@ int main() {
 				switch (sw) {
 				case(1):
 				{
-					std::cout << "Create the Image<bool>\n\n" << "Enter the length and width of the Images: ";
+					std::cout << "Create the Image\n\n" << "Enter the length and width of the Images: ";
 					std::cin >> length;
 					std::cin >> width;
-					std::cout << "Enter the value for the Image<bool>: ";
+					std::cout << "Enter the value for the Image: ";
 					std::cin >> mean;
 					try {
 						Image<float> picture(length, width, mean);
@@ -469,7 +473,7 @@ int main() {
 				case(3):
 				{
 					float value;
-					std::cout << "The meaning of the variable (0 or 1): ";
+					std::cout << "The meaning of the variable: ";
 					std::cin >> value;
 					bool exit3 = false;
 					float mean3;
